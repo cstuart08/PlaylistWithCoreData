@@ -25,7 +25,7 @@ class SongTableViewController: UITableViewController {
         guard let title = songTitleTextField.text,
             let artist = songArtistTextField.text,
             let playlist = self.playlist else { return }
-        SongController.sharedInstance.createSongWith(title: title, artist: artist, playlist: playlist)
+        SongController.createSongWith(title: title, artist: artist, playlist: playlist)
         tableView.reloadData()
         songTitleTextField.text = ""
         songArtistTextField.text = ""
@@ -54,8 +54,9 @@ class SongTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            guard let song = playlist?.songs?.object(at: indexPath.row) as? Song else { return }
-            SongController.sharedInstance.deleteSong(song: song)
+            guard let unwrappedPlaylist = playlist,
+                let song = unwrappedPlaylist.songs?[indexPath.row] as? Song else { return }
+            SongController.deleteSong(song: song)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
