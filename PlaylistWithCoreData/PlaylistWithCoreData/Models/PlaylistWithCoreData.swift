@@ -1,5 +1,5 @@
 //
-//  CoreDataStack.swift
+//  PlaylistWithCoreData.swift
 //  PlaylistWithCoreData
 //
 //  Created by Cameron Stuart on 8/7/19.
@@ -11,15 +11,15 @@ import CoreData
 
 class CoreDataStack {
     
-    static var container: NSPersistentContainer {
+    static var container: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: "PlaylistCoreData")
-        container.loadPersistentStores { (storeDescription, error) in
+        let container = NSPersistentContainer(name: "PlaylistWithCoreData")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        }
+        })
         return container
-    }
+    }()
     static var context: NSManagedObjectContext { return container.viewContext }
 }

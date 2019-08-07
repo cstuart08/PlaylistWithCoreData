@@ -21,6 +21,7 @@ class PlaylistController {
     
     func createPlaylistWith(name: String) {
         _ = Playlist(name: name)
+        print("Called createPlaylistWith function")
         saveToPersistentStore()
     }
     
