@@ -42,7 +42,8 @@ class SongTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath)
         
-        guard let song = playlist?.songs?.object(at: indexPath.row) as? Song else { return UITableViewCell() }
+        guard let unwrappedPlaylist = playlist,
+            let song = unwrappedPlaylist.songs?[indexPath.row] as? Song else { return UITableViewCell() }
         
         cell.textLabel?.text = song.title
         cell.detailTextLabel?.text = song.artist
