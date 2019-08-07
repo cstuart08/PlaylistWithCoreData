@@ -18,3 +18,5 @@ extension Playlist {
         self.name = name
     }
 }
+
+// Initial member-wise (designated) initializer was created by CoreData.

@@ -1,5 +1,5 @@
 //
-//  PlaylistWithCoreData.swift
+//  CoreDataStack.swift
 //  PlaylistWithCoreData
 //
 //  Created by Cameron Stuart on 8/7/19.
@@ -11,15 +11,23 @@ import CoreData
 
 class CoreDataStack {
     
+    // Sets the Persistent Container and makes it accessable to the rest of the project.
+        // NSPersistent container will manage MOC, PSC, & PS.
     static var container: NSPersistentContainer = {
         
+        // sets the specific container to an identifier.
         let container = NSPersistentContainer(name: "PlaylistWithCoreData")
+        // Once container exists, loadPersistentStores will complete the creation of the container.
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            // sets app to crash incase error exists in loadPersistentStores
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         return container
     }()
-    static var context: NSManagedObjectContext { return container.viewContext }
+    // Project wide variable to connect to the MOC.
+    static var context: NSManagedObjectContext {
+        return container.viewContext
+    }
 }

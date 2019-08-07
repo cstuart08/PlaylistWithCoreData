@@ -11,6 +11,7 @@ import CoreData
 
 extension Song {
     
+    @discardableResult // IDK why, but Karl said to do this on any "children models".
     convenience init(title: String, artist: String, playlist: Playlist, context: NSManagedObjectContext = CoreDataStack.context) {
         
         self.init(context: context)

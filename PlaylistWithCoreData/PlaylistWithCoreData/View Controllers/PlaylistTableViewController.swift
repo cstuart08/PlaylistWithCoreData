@@ -57,9 +57,9 @@ class PlaylistTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PlaylistToDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow,
-                let songListTVC = segue.destination as? SongTableViewController else { return }
+                let songListVC = segue.destination as? SongTableViewController else { return }
             let playlist = PlaylistController.sharedInstance.playlists[indexPath.row]
-            songListTVC.playlist = playlist
+            songListVC.playlist = playlist
         }
     }
 }

@@ -11,37 +11,34 @@ import CoreData
 
 class PlaylistController {
     
+    // Singleton - to ensure we only interact with one playlist at a time
     static let sharedInstance = PlaylistController()
     
+    // Local Source of Truth
     var playlists: [Playlist] {
-        let moc = CoreDataStack.context
+        // "<Playlist>" allows us to specify what type of Object we are trying to fetch data from.
+        // This is for safety.
         let fetchRequest: NSFetchRequest<Playlist> = Playlist.fetchRequest()
-        return (try? moc.fetch(fetchRequest)) ?? []
+        return (try?CoreDataStack.context.fetch(fetchRequest)) ?? []
     }
     
     func createPlaylistWith(name: String) {
         _ = Playlist(name: name)
-        print("Called createPlaylistWith function")
+        print("Called the createPlaylistWith function")
         saveToPersistentStore()
     }
     
     func deletePlaylist(playlist: Playlist) {
-        let moc = CoreDataStack.context
-        moc.delete(playlist)
+        CoreDataStack.context.delete(playlist)
+        print("Called the deletePlaylist function")
         saveToPersistentStore()
     }
     
     func saveToPersistentStore() {
-        let moc = CoreDataStack.context
-        
         do {
-            try moc.save()
+            try CoreDataStack.context.save()
         } catch {
-            print("Error saving to persistent store. \(error.localizedDescription)")
+            print("Error saving to persistent store in Function: \(#function): \(error.localizedDescription)")
         }
     }
-    
-    
-    
-    
 }
