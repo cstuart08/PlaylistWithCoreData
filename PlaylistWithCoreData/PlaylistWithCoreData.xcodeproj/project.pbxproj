@@ -17,6 +17,8 @@
 		E0DEEB0D22FB081800B4B91F /* Song+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DEEB0C22FB081800B4B91F /* Song+Convenience.swift */; };
 		E0DEEB0F22FB08EC00B4B91F /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DEEB0E22FB08EC00B4B91F /* PlaylistController.swift */; };
 		E0DEEB1122FB0C0000B4B91F /* SongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DEEB1022FB0C0000B4B91F /* SongController.swift */; };
+		E0DEEB1322FB0CF800B4B91F /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DEEB1222FB0CF800B4B91F /* PlaylistTableViewController.swift */; };
+		E0DEEB1522FB0D0200B4B91F /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DEEB1422FB0D0200B4B91F /* SongTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E0DEEB0C22FB081800B4B91F /* Song+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+Convenience.swift"; sourceTree = "<group>"; };
 		E0DEEB0E22FB08EC00B4B91F /* PlaylistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
 		E0DEEB1022FB0C0000B4B91F /* SongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongController.swift; sourceTree = "<group>"; };
+		E0DEEB1222FB0CF800B4B91F /* PlaylistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewController.swift; sourceTree = "<group>"; };
+		E0DEEB1422FB0D0200B4B91F /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 		E0DEEB0122FA3C3100B4B91F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E0DEEB1222FB0CF800B4B91F /* PlaylistTableViewController.swift */,
+				E0DEEB1422FB0D0200B4B91F /* SongTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -199,12 +205,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0DEEB1122FB0C0000B4B91F /* SongController.swift in Sources */,
+				E0DEEB1522FB0D0200B4B91F /* SongTableViewController.swift in Sources */,
 				E0DEEB0722FB046A00B4B91F /* PlaylistWithCoreDate.xcdatamodeld in Sources */,
 				E0DEEB0D22FB081800B4B91F /* Song+Convenience.swift in Sources */,
 				E0DEEAEE22FA3C0900B4B91F /* AppDelegate.swift in Sources */,
 				E0DEEB0922FB058300B4B91F /* Playlist+Convenience.swift in Sources */,
 				E0DEEB0B22FB05EB00B4B91F /* CoreDataStack.swift in Sources */,
 				E0DEEB0F22FB08EC00B4B91F /* PlaylistController.swift in Sources */,
+				E0DEEB1322FB0CF800B4B91F /* PlaylistTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

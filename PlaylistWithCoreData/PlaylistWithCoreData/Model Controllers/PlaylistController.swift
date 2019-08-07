@@ -6,7 +6,7 @@
 //  Copyright © 2019 Cameron Stuart. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import CoreData
 
 class PlaylistController {
